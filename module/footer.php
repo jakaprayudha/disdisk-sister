@@ -2,7 +2,7 @@
    <div class="container-fluid">
       <div class="row">
          <div class="col-md-6">
-            2022 - <?= date('Y') ?> © Imzack Developer - Dinas Pendidikan Provinsi Sumatera Utara
+            2022 - <?= date('Y') ?> © Imzack Developer - Universitas Graha Kirana
          </div>
          <div class="col-md-6">
             <div class="text-md-right footer-links d-none d-md-block">

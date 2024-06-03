@@ -34,12 +34,16 @@ require 'controller/auth/login.php';
                     <!-- form -->
                     <form action="" method="POST">
                         <div class="form-group">
-                            <label for="fullname">Nama Lengkap</label>
-                            <input class="form-control" autocomplete="off" type="text" id="fullname" name="nama" placeholder="Nama Sesuai Identitas" required>
+                            <label for="nomor_nik">NIK</label>
+                            <input class="form-control" autocomplete="off" type="text" id="nomor_nik" name="nomor_nik" placeholder="Nomor Induk Kependudukan" required>
                         </div>
                         <div class="form-group">
-                            <label for="emailaddress">Email address</label>
-                            <input class="form-control" autocomplete="off" type="email" id="emailaddress" name="email" required placeholder="Enter your email">
+                            <label for="nama">Nama Lengkap</label>
+                            <input class="form-control" autocomplete="off" type="text" id="nama" name="nama" placeholder="Nama Sesuai Identitas" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input class="form-control" autocomplete="off" type="email" id="email" name="email" required placeholder="Enter your email">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>

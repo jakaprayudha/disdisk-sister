@@ -21,12 +21,11 @@ require 'controller/auth/login.php';
             <div class="card-body">
 
                <!-- Logo -->
-               <!-- <div class="auth-brand text-center text-lg-left">
+               <div class="auth-brand text-center text-lg-left">
                   <a href="index">
-                     <span><img src="assets/images/graha.png" alt="" height="100"></span>
+                     <span><img src="assets/images/logosumut.png" alt="" height="100"></span>
                   </a>
-               </div> -->
-
+               </div>
                <!-- title-->
                <h4 class="mt-0">Sign In</h4>
                <p class="text-muted mb-4">Masukkan email dan password anda untuk mendapatkan akses ke sistem</p>

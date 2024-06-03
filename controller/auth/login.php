@@ -7,9 +7,8 @@ if (isset($_POST['login'])) {
    $data_user = mysqli_fetch_array($check_user);
    session_start();
    $_SESSION['uid'] = $data_user['uid'];
-   $_SESSION['nama'] = $data_user['nama'];
+   $_SESSION['fullname'] = $data_user['fullname'];
    $_SESSION['username'] = $data_user['username'];
-   $_SESSION['status'] = $data_user['status'];
    $_SESSION['roles'] = $data_user['roles'];
    $_SESSION['path'] = $data_user['path'];
    if ($data_user == NULL) {
@@ -20,13 +19,13 @@ if (isset($_POST['login'])) {
          $_SESSION["error"] = 'Password Anda Salah !! ';
       } else {
          $roles = $data_user['roles'];
-         if ($roles == 'administrator') {
-            $_SESSION['redirectlogin'] = 'module/administrator/index';
-         } else if ($roles = 'petugas') {
+         if ($roles == 'admin') {
+            $_SESSION['redirectlogin'] = 'module/admin/index';
+         } else if ($roles = 'user') {
             $_SESSION['redirectlogin'] = 'module/user/index';
          }
          $stamp = date('Y-m-d H:i:s');
-         $update_status_time = mysqli_query($koneksi, "UPDATE user SET login_at='$stamp' WHERE username='$email'");
+         $update_status_time = mysqli_query($koneksi, "UPDATE user SET update_at='$stamp' WHERE username='$email'");
          if ($update_status_time) {
             $_SESSION["sukses"] = 'Selamat Anda Berhasil Login ';
          }
@@ -53,6 +52,7 @@ if (isset($_POST['reset'])) {
 }
 
 if (isset($_POST['register'])) {
+   $nik = $_POST['nomor_nik'];
    $email = $_POST['email'];
    $nama = $_POST['nama'];
    $password = md5($_POST['password']);
@@ -63,10 +63,10 @@ if (isset($_POST['register'])) {
       if ($data_user) {
          $_SESSION["error"] = 'Email anda telah terdaftar !!!';
       } else {
-         $uid = md5(rand(1111, 9999));
+         $uid = md5($nik);
          $roles = 'user';
          $path = 'user';
-         $insert = mysqli_query($koneksi, "INSERT INTO user (uid, nama, username, password, roles, path)VALUES('$uid','$nama','$email','$password','$roles','$path')");
+         $insert = mysqli_query($koneksi, "INSERT INTO user (uid, fullname, username, password, roles, path)VALUES('$uid','$nama','$email','$password','$roles','$path')");
          if ($insert) {
             $_SESSION["sukses"] = 'Anda Berhasil Melakukan Registrasi, Silahkan Login !!';
             $_SESSION['redirectlogin'] = 'index';

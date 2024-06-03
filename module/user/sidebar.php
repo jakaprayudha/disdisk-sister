@@ -41,170 +41,237 @@ $path = "module/$datapath/";
          </ul>
       </li>
 
-      <li class="side-nav-title side-nav-item">Master Data</li>
-
-
+      <li class="side-nav-title side-nav-item">Aktivitas</li>
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
             <i class="uil-user"></i>
-            <span> Management User </span>
+            <span> Profile </span>
             <span class="menu-arrow"></span>
          </a>
          <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-               <a href="<?= $path ?>pegawai">Data Pegawai</a>
+               <a href="<?= $path ?>data-pribadi">Data Pribadi</a>
             </li>
             <li>
-               <a href="<?= $path ?>user">Management User</a>
+               <a href="<?= $path ?>inpassing">Inpassing</a>
+            </li>
+            <li>
+               <a href="<?= $path ?>jabatan-fungsional">Jabatan Fungsional</a>
+            </li>
+            <li>
+               <a href="<?= $path ?>kepangkatan">Kepangkatan</a>
+            </li>
+            <li>
+               <a href="<?= $path ?>penempatan">Penempatan</a>
             </li>
          </ul>
       </li>
-
-      <li class="side-nav-item">
-         <a href="<?= $path ?>perusahaan" class="side-nav-link">
-            <i class="uil-building"></i>
-            <span> Perusahaan </span>
-         </a>
-      </li>
-
 
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
             <i class="uil-folder"></i>
-            <span> Wilayah Kerja </span>
-            <spRSU MITRA GURAY PETUMBUKANan class="menu-arrow"></spRSU>
+            <span> Kualifikasi </span>
+            <span class="menu-arrow"></span>
          </a>
          <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-               <a href="<?= $path ?>upt-wilayah">UPT Wilayah</a>
+               <a href="<?= $path ?>pendidikan-formal">Pendidikan Formal</a>
             </li>
             <li>
-               <a href="<?= $path ?>wil-kabupaten">Kabupaten/Kota</a>
+               <a href="<?= $path ?>diklat">Diklat</a>
             </li>
             <li>
-               <a href="<?= $path ?>wil-kecamatan">Kecamatan</a>
+               <a href="<?= $path ?>riwayat-pekerjaan">Riwayat Pekerjaan</a>
+            </li>
+         </ul>
+      </li>
+
+      <li class="side-nav-item">
+         <a href="javascript: void(0);" class="side-nav-link">
+            <i class="uil-folder"></i>
+            <span> Kompetensi </span>
+            <span class="menu-arrow"></span>
+         </a>
+         <ul class="side-nav-second-level" aria-expanded="false">
+            <li>
+               <a href="<?= $path ?>sertifikasi">Sertifikasi</a>
             </li>
             <li>
-               <a href="<?= $path ?>wil-desa">Desa</a>
+               <a href="<?= $path ?>tes">Tes</a>
             </li>
          </ul>
       </li>
       <li class="side-nav-item">
-         <a href="<?= $path ?>pjk3" class="side-nav-link">
-            <i class="uil-user-hard-hat"></i>
-            <span> PJK3 </span>
+         <a href="javascript: void(0);" class="side-nav-link">
+            <i class="uil-folder"></i>
+            <span> Pelaks. Pendidikan </span>
+            <span class="menu-arrow"></span>
          </a>
+         <ul class="side-nav-second-level" aria-expanded="false">
+            <li>
+               <a href="<?= $path ?>pengajaran">Pengajaran</a>
+            </li>
+            <li>
+               <a href="javascript:;">Bimbingan/Konseling</a>
+            </li>
+            <li>
+               <a href="javascript:;">Bahan Ajar</a>
+            </li>
+            <li>
+               <a href="javascript:;">Pembinaan</a>
+            </li>
+            <li>
+               <a href="javascript:;">Visiting Scientist</a>
+            </li>
+            <li>
+               <a href="javascript:;">Datasering</a>
+            </li>
+            <li>
+               <a href="javascript:;">Orasi Ilmiah</a>
+            </li>
+            <li>
+               <a href="javascript:;">Tugas Tambahan</a>
+            </li>
+         </ul>
+      </li>
+      <li class="side-nav-item">
+         <a href="javascript: void(0);" class="side-nav-link">
+            <i class="uil-folder"></i>
+            <span> Pelaks. Penelitian </span>
+            <span class="menu-arrow"></span>
+         </a>
+         <ul class="side-nav-second-level" aria-expanded="false">
+            <li>
+               <a href="javascript:;">Penelitian</a>
+            </li>
+            <li>
+               <a href="javascript:;">Publikasi Karya</a>
+            </li>
+            <li>
+               <a href="javascript:;">Paten / HKI</a>
+            </li>
+         </ul>
+      </li>
+      <li class="side-nav-item">
+         <a href="javascript: void(0);" class="side-nav-link">
+            <i class="uil-folder"></i>
+            <span> Pelaks. Pengbadian </span>
+            <span class="menu-arrow"></span>
+         </a>
+         <ul class="side-nav-second-level" aria-expanded="false">
+            <li>
+               <a href="javascript:;">Pengabdian</a>
+            </li>
+            <li>
+               <a href="javascript:;">Pembicara</a>
+            </li>
+            <li>
+               <a href="javascript:;">Pengelola Jurnal</a>
+            </li>
+            <li>
+               <a href="javascript:;">Jabatan Struktural</a>
+            </li>
+         </ul>
+      </li>
+      <li class="side-nav-item">
+         <a href="javascript: void(0);" class="side-nav-link">
+            <i class="uil-folder"></i>
+            <span> Penunjang </span>
+            <span class="menu-arrow"></span>
+         </a>
+         <ul class="side-nav-second-level" aria-expanded="false">
+            <li>
+               <a href="javascript:;">Anggota Profesi</a>
+            </li>
+            <li>
+               <a href="javascript:;">Penghargaan</a>
+            </li>
+            <li>
+               <a href="javascript:;">Penunjang Lain</a>
+            </li>
+         </ul>
+      </li>
+      <li class="side-nav-item">
+         <a href="javascript: void(0);" class="side-nav-link">
+            <i class="uil-folder"></i>
+            <span> Reward </span>
+            <span class="menu-arrow"></span>
+         </a>
+         <ul class="side-nav-second-level" aria-expanded="false">
+            <li>
+               <a href="javascript:;">Beasiswa</a>
+            </li>
+            <li>
+               <a href="javascript:;">Kesehajetraan</a>
+            </li>
+            <li>
+               <a href="javascript:;">Tunjangan</a>
+            </li>
+         </ul>
+      </li>
+      <li class="side-nav-item">
+         <a href="javascript: void(0);" class="side-nav-link">
+            <i class="uil-folder"></i>
+            <span> Layanan Insentif </span>
+            <span class="menu-arrow"></span>
+         </a>
+         <ul class="side-nav-second-level" aria-expanded="false">
+            <li>
+               <a href="javascript:;">Rekap Kegiatan</a>
+            </li>
+            <li>
+               <a href="javascript:;">Asesor Layanan</a>
+            </li>
+         </ul>
       </li>
 
       <li class="side-nav-item">
-         <a href="<?= $path ?>jenis-k3" class="side-nav-link">
-            <i class="uil-money-bill-stack"></i>
-            <span> Jenis Objek K3 </span>
+         <a href="javascript: void(0);" class="side-nav-link">
+            <i class="uil-folder"></i>
+            <span> Layanan PAK </span>
+            <span class="menu-arrow"></span>
          </a>
-      </li>
-      <li class="side-nav-item">
-         <a href="<?= $path ?>jenis-alat" class="side-nav-link">
-            <i class="uil-technology"></i>
-            <span> Jenis Alat </span>
-         </a>
-      </li>
-      <li class="side-nav-item">
-         <a href="<?= $path ?>jenis-perusahaan" class="side-nav-link">
-            <i class="uil-newspaper"></i>
-            <span> Sektor Perusahaan </span>
-         </a>
+         <ul class="side-nav-second-level" aria-expanded="false">
+            <li>
+               <a href="javascript:;">Angka Kredit</a>
+            </li>
+         </ul>
       </li>
 
-      <li class="side-nav-title side-nav-item">RIKSA UJI</li>
       <li class="side-nav-item">
-         <a href="<?= $path ?>permohonan" class="side-nav-link">
+         <a href="javascript: void(0);" class="side-nav-link">
+            <i class="uil-folder"></i>
+            <span> Layanan Sertifikasi </span>
+            <span class="menu-arrow"></span>
+         </a>
+         <ul class="side-nav-second-level" aria-expanded="false">
+            <li>
+               <a href="javascript:;">Kepesertaan</a>
+            </li>
+            <li>
+               <a href="javascript:;">Asesmen Asesor</a>
+            </li>
+         </ul>
+      </li>
+
+      <li class="side-nav-item">
+         <a href="<?= $path ?>registrasi" class="side-nav-link">
             <i class=" uil-file-plus-alt"></i>
-            <span> Permohonan </span>
-         </a>
-      </li>
-
-      <li class="side-nav-item">
-         <a href="<?= $path ?>spt" class="side-nav-link">
-            <i class="uil-file-edit-alt"></i>
-            <span> Surat Perintah Tugas </span>
-         </a>
-      </li>
-
-      <li class="side-nav-item">
-         <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-file-check-alt"></i>
-            <span> Approval </span>
-            <span class="menu-arrow"></span>
-         </a>
-         <ul class="side-nav-second-level" aria-expanded="false">
-            <li>
-               <a href="pages-profile.html">Paraf Kabid SPT</a>
-            </li>
-            <li>
-               <a href="pages-profile-2.html">Persetujuan SPT</a>
-            </li>
-            <li>
-               <a href="pages-invoice.html">Pemeriksaan</a>
-            </li>
-            <li>
-               <a href="pages-faq.html">Persetujuan Pemeriksaan</a>
-            </li>
-            <li>
-               <a href="pages-pricing.html">Surat Keterangan</a>
-            </li>
-            <li>
-               <a href="pages-maintenance.html">Maintenance</a>
-            </li>
-         </ul>
-      </li>
-
-      <li class="side-nav-item">
-         <a href="landing.html" target="_blank" class="side-nav-link">
-            <i class="uil-globe"></i>
-            <span class="badge badge-success float-right">New</span>
-            <span> Feedback </span>
-         </a>
-      </li>
-
-      <li class="side-nav-item">
-         <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-window"></i>
-            <span> Approval SUKET </span>
-            <span class="menu-arrow"></span>
-         </a>
-         <ul class="side-nav-second-level" aria-expanded="false">
-            <li>
-               <a href="layouts-horizontal.html">Paraf UPT</a>
-            </li>
-            <li>
-               <a href="layouts-detached.html">Paraf Kabid</a>
-            </li>
-            <li>
-               <a href="layouts-detached.html">Persetujuan SUKET</a>
-            </li>
-         </ul>
-      </li>
-
-      <li class="side-nav-title side-nav-item mt-1">Laporan</li>
-      <li class="side-nav-item">
-         <a href="widgets.html" class="side-nav-link">
-            <i class="uil-layer-group"></i>
-            <span> Surat Keterangan </span>
+            <span> Data Dokumen </span>
          </a>
       </li>
       <li class="side-nav-item">
-         <a href="widgets.html" class="side-nav-link">
-            <i class="uil-layer-group"></i>
-            <span> Peralatan </span>
+         <a href="<?= $path ?>registrasi" class="side-nav-link">
+            <i class=" uil-file-plus-alt"></i>
+            <span> Panduan </span>
          </a>
       </li>
       <li class="side-nav-item">
-         <a href="widgets.html" class="side-nav-link">
-            <i class="uil-layer-group"></i>
-            <span> SPT </span>
+         <a href="<?= $path ?>registrasi" class="side-nav-link">
+            <i class=" uil-file-plus-alt"></i>
+            <span> SSD </span>
          </a>
       </li>
-
 
 
    </ul>
