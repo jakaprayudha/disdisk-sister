@@ -68,31 +68,31 @@ require '../../controller/view.php';
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">NIP</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 20001991203123123">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">Nama Lengkap</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Jaka Prayudha">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">Jenis Kelamin</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Laki Laki">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">Tempat Lahir</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Medan">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">Tanggal Lahir</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 20 Mei 1992">
                               </div>
                            </div>
                         </div>
@@ -106,19 +106,19 @@ require '../../controller/view.php';
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">NIK</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 17212005920001">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Agama</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Islam">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Kewarganegraan</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Indonesia">
                                     </div>
                                  </div>
                               </div>
@@ -134,25 +134,25 @@ require '../../controller/view.php';
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Status Perkawinan</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Kawin">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Nama Suami/Istri</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Kiki Wulandari">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">NIP Suami/Istri</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": -">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Pekerjaan Suami/Istri</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Accounting Public">
                                     </div>
                                  </div>
                               </div>
@@ -176,19 +176,19 @@ require '../../controller/view.php';
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Rumpun Ilmu</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Ilmu Komputer">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Pohon Ilmu</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Teknologi Informasi">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Cabang Ilmu</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Sistem Komputer">
                                     </div>
                                  </div>
                               </div>
@@ -204,61 +204,61 @@ require '../../controller/view.php';
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": jakaprayudha3@gmail.com">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">Alamat</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Jl. Jend. Sudirman No. 1">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">RT</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 01">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">RW</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 01">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">Desa/Kelurahan</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Jati">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">Kecamatan/Kota/Kabupaten</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Medan Timur">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">Provinsi</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Sumatera Utara">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">Kode Pos</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 20151">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">No. Telepon Rumah</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 061-09282323">
                               </div>
                            </div>
                            <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">No.Ponsel</label>
                               <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 081234567890">
                               </div>
                            </div>
                         </div>
@@ -272,61 +272,61 @@ require '../../controller/view.php';
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Program Studi</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": S1-Ilmu komputer">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">NIP (Khusus PNS)</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": -">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Status Kepegawaian</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Guru Tetap">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Status Keaktifan</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Aktif">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Nomor SK CPNS</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": -">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">SK CPNS Terhitung Mulai Tanggal</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": -">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Nomor SK TMMD</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 109.2/SKDT/YBKS/VI/2">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Tanggal Mulai Mejadi Guru (TMMD)</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="12 Agustus 2016">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Pangkat/Golongan</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Penata - III/c ">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Sumber Gaji</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Lainnya">
                                     </div>
                                  </div>
                               </div>
@@ -342,19 +342,19 @@ require '../../controller/view.php';
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">NPWP</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 907622351113000">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">Nama Wajib Pajak</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": JAKA PRAYUDHA">
                                     </div>
                                  </div>
                                  <div class="row">
                                     <label for="staticEmail" class="col-sm-4 col-form-label">SINTA ID</label>
                                     <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=: "">
+                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 6087041">
                                     </div>
                                  </div>
                               </div>

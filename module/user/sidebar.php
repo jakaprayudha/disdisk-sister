@@ -112,25 +112,25 @@ $path = "module/$datapath/";
                <a href="<?= $path ?>pengajaran">Pengajaran</a>
             </li>
             <li>
-               <a href="javascript:;">Bimbingan/Konseling</a>
+               <a href="<?= $path ?>bimbingan">Bimbingan/Konseling</a>
             </li>
             <li>
-               <a href="javascript:;">Bahan Ajar</a>
+               <a href="<?= $path ?>bahan-ajar">Bahan Ajar</a>
             </li>
             <li>
-               <a href="javascript:;">Pembinaan</a>
+               <a href="<?= $path ?>pembinaan">Pembinaan</a>
             </li>
             <li>
-               <a href="javascript:;">Visiting Scientist</a>
+               <a href="<?= $path ?>visiting-scientist">Visiting Scientist</a>
             </li>
             <li>
-               <a href="javascript:;">Datasering</a>
+               <a href="<?= $path ?>datasering">Datasering</a>
             </li>
             <li>
-               <a href="javascript:;">Orasi Ilmiah</a>
+               <a href="<?= $path ?>orasi-ilmiah">Orasi Ilmiah</a>
             </li>
             <li>
-               <a href="javascript:;">Tugas Tambahan</a>
+               <a href="<?= $path ?>tugas-tambahan">Tugas Tambahan</a>
             </li>
          </ul>
       </li>
@@ -142,7 +142,7 @@ $path = "module/$datapath/";
          </a>
          <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-               <a href="javascript:;">Penelitian</a>
+               <a href="<?= $path ?>penelitian">Penelitian</a>
             </li>
             <li>
                <a href="javascript:;">Publikasi Karya</a>
