@@ -212,15 +212,15 @@ $path = "module/$datapath/";
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
             <i class="uil-folder"></i>
-            <span> Layanan Insentif </span>
+            <span> Layanan BKG </span>
             <span class="menu-arrow"></span>
          </a>
          <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-               <a href="javascript:;">Rekap Kegiatan</a>
+               <a href="<?= $path ?>rekap-kegiatan">Rekap Kegiatan</a>
             </li>
             <li>
-               <a href="javascript:;">Asesor Layanan</a>
+               <a href="<?= $path ?>asesor">Asesor Layanan</a>
             </li>
          </ul>
       </li>
