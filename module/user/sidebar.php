@@ -145,10 +145,10 @@ $path = "module/$datapath/";
                <a href="<?= $path ?>penelitian">Penelitian</a>
             </li>
             <li>
-               <a href="<?= $path ?>publikasi"">Publikasi Karya</a>
+               <a href="<?= $path ?>publikasi">Publikasi Karya</a>
             </li>
             <li>
-               <a href=" <?= $path ?>hki"">Paten / HKI</a>
+               <a href="<?= $path ?>hki">Paten / HKI</a>
             </li>
          </ul>
       </li>
@@ -160,16 +160,16 @@ $path = "module/$datapath/";
          </a>
          <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-               <a href="javascript:;">Pengabdian</a>
+               <a href="<?= $path ?>pengabdian">Pengabdian</a>
             </li>
             <li>
-               <a href="javascript:;">Pembicara</a>
+               <a href="<?= $path ?>pembicara">Pembicara</a>
             </li>
             <li>
-               <a href="javascript:;">Pengelola Jurnal</a>
+               <a href="<?= $path ?>pengelola-jurnal">Pengelola Jurnal</a>
             </li>
             <li>
-               <a href="javascript:;">Jabatan Struktural</a>
+               <a href="<?= $path ?>jabatan-struktural">Jabatan Struktural</a>
             </li>
          </ul>
       </li>
