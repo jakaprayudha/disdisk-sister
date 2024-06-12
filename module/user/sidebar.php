@@ -267,7 +267,7 @@ $path = "module/$datapath/";
          </a>
       </li>
       <li class="side-nav-item">
-         <a href="<?= $path ?>registrasi" class="side-nav-link">
+         <a href="<?= $path ?>ssd" class="side-nav-link">
             <i class=" uil-file-plus-alt"></i>
             <span> SSD </span>
          </a>
