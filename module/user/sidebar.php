@@ -255,7 +255,7 @@ $path = "module/$datapath/";
       </li>
 
       <li class="side-nav-item">
-         <a href="<?= $path ?>registrasi" class="side-nav-link">
+         <a href="<?= $path ?>dokumen" class="side-nav-link">
             <i class=" uil-file-plus-alt"></i>
             <span> Data Dokumen </span>
          </a>
