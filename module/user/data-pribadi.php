@@ -100,7 +100,7 @@ require '../../controller/view.php';
                      <div class="row">
                         <div class="col-12">
                            <div class="card">
-                              <h5 class="card-header">Kependudukan <span class="badge badge-primary float-right">Ajukan Perubahan</span>
+                              <h5 class="card-header">Kependudukan <span class="badge badge-primary float-right"><a data-toggle="modal" data-target="#nik">Ajukan Perubahan</a></span>
                               </h5>
                               <div class="card-body">
                                  <div class="row">
@@ -505,7 +505,111 @@ require '../../controller/view.php';
    <script src="assets/js/pages/demo.dashboard.js"></script>
    <!-- end demo js-->
 </body>
+<!-- /.modal Perubahan Data Kependudukan -->
+<div id="kependudukan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title" id="standard-modalLabel">Perubahan Data</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+         </div>
+         <div class="modal-body">
+            <div class="form-group">
+               <label for="nik">Nomor Induk Kependudukan</label>
+               <input type="text" class="form-control" id="nik" aria-describedby="nik" value="">
+            </div>
+            <div class="form-group">
+               <label for="nik">Agama</label>
+               <select name="" class="form-control" id="">
+                  <option value="">Pilih</option>
+                  <option value="">Islam</option>
+                  <option value="">Protestan</option>
+                  <option value="">Katholik</option>
+                  <option value="">Budha</option>
+                  <option value="">Hindu</option>
+                  <option value="">Lainnya</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="nik">Kewarganegaraan</label>
+               <input type="text" class="form-control" id="nik" aria-describedby="nik" value="">
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-<!-- Mirrored from coderthemes.com/hyper/saas/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Feb 2020 05:15:01 GMT -->
+<!-- /.modal Perubahan Data Keluarga -->
+<div id="keluarga" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title" id="standard-modalLabel">Perubahan Data</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+         </div>
+         <div class="modal-body">
+            <div class="form-group">
+               <label for="nik">Status Perkawinan</label>
+               <select name="" class="form-control" id="">
+                  <option value="">Pilih</option>
+                  <option value="">Kawin</option>
+                  <option value="">Belum Kawin</option>
+                  <option value="">Duda/Janda</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="nik">Nama Suami/Istri</label>
+               <input type="text" class="form-control" id="nik" aria-describedby="nik" value="">
+            </div>
+            <div class="form-group">
+               <label for="nik">NIP Suami/Istri</label>
+               <input type="text" class="form-control" id="nik" aria-describedby="nik" value="">
+            </div>
+            <div class="form-group">
+               <label for="nik">Pekerjaan Suami/Istri</label>
+               <input type="text" class="form-control" id="nik" aria-describedby="nik" value="">
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- /.modal Perubahan Data Keluarga -->
+<div id="rumpunilmu" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title" id="standard-modalLabel">Perubahan Data</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+         </div>
+         <div class="modal-body">
+            <div class="form-group">
+               <label for="nik">Rumpun Ilmu</label>
+               <input type="text" class="form-control" id="nik" aria-describedby="nik" value="">="">Duda/Janda</option>
+            </div>
+            <div class="form-group">
+               <label for="nik">Pohon Ilmu</label>
+               <input type="text" class="form-control" id="nik" aria-describedby="nik" value="">
+            </div>
+            <div class="form-group">
+               <label for="nik">Cabang Ilmu</label>
+               <input type="text" class="form-control" id="nik" aria-describedby="nik" value="">
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 </html>

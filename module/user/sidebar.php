@@ -145,10 +145,10 @@ $path = "module/$datapath/";
                <a href="<?= $path ?>penelitian">Penelitian</a>
             </li>
             <li>
-               <a href="javascript:;">Publikasi Karya</a>
+               <a href="<?= $path ?>publikasi"">Publikasi Karya</a>
             </li>
             <li>
-               <a href="javascript:;">Paten / HKI</a>
+               <a href=" javascript:;">Paten / HKI</a>
             </li>
          </ul>
       </li>
