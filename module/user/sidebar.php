@@ -199,13 +199,13 @@ $path = "module/$datapath/";
          </a>
          <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-               <a href="javascript:;">Beasiswa</a>
+               <a href="<?= $path ?>beasiswa">Beasiswa</a>
             </li>
             <li>
-               <a href="javascript:;">Kesehajetraan</a>
+               <a href="<?= $path ?>kesehjateraan">Kesehajetraan</a>
             </li>
             <li>
-               <a href="javascript:;">Tunjangan</a>
+               <a href="<?= $path ?>tunjangan">Tunjangan</a>
             </li>
          </ul>
       </li>
