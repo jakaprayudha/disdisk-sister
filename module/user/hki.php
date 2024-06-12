@@ -1,5 +1,5 @@
 <?php
-$page = 'Publikasi Karya';
+$page = 'Paten (HKI)';
 require '../../controller/view.php';
 $roles = 'user';
 $query = tampildata("SELECT * FROM usulan");
@@ -77,20 +77,14 @@ $query = tampildata("SELECT * FROM usulan");
                                        <th>No</th>
                                        <th>Judul</th>
                                        <th>Kategori Kegiatan</th>
-                                       <th>Jenis Publikasi</th>
-                                       <th>Quartile</th>
+                                       <th>Jenis</th>
                                        <th>Tanggal Terbit</th>
-                                       <th>Asal Data</th>
                                        <th>Rubrik BKD</th>
-                                       <th>Tindakan</th>
                                        <th class="text-center">Aksi</th>
                                     </tr>
                                  </thead>
                                  <tbody>
                                     <tr>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
                                        <td></td>
                                        <td></td>
                                        <td></td>

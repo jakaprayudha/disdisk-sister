@@ -148,7 +148,7 @@ $path = "module/$datapath/";
                <a href="<?= $path ?>publikasi"">Publikasi Karya</a>
             </li>
             <li>
-               <a href=" javascript:;">Paten / HKI</a>
+               <a href=" <?= $path ?>hki"">Paten / HKI</a>
             </li>
          </ul>
       </li>

@@ -104,16 +104,16 @@ require '../../controller/view.php';
 
                <div class="alert alert-primary" role="alert">
                   <strong> PENGAJUAN KENAIKAN JABATAN FUNGSIONAL SEGERA DIBUKA</strong>
-                  Pengajuan kenaikan jabatan fungsional (Lektor Kepala dan Guru Besar) akan dibuka melalui SISTER. Sebelum pengajuan kenaikan jabatan fungsional dosen dibuka, pastikan Dosen sudah melengkapi Rumpun Ilmu, memutakhirkan data di profil SISTER dan Operator PAK untuk melengkapi dokumen persyaratan. Klik Info Selengkapnya untuk mempelajari lebih lanjut. Selain perihal di atas, kami juga mengimbau Dosen dan Admin PT untuk melakukan pemadanan data dan Operator PAK untuk menggunakan perangkat bantu AK Konversi <span class="badge badge-primary">Selengkapnya</span>
+                  Pengajuan kenaikan jabatan fungsional (Lektor Kepala dan Guru Besar) akan dibuka melalui SISTER. Sebelum pengajuan kenaikan jabatan fungsional Guru dibuka, pastikan Guru sudah melengkapi Rumpun Ilmu, memutakhirkan data di profil SISTER dan Operator PAK untuk melengkapi dokumen persyaratan. Klik Info Selengkapnya untuk mempelajari lebih lanjut. Selain perihal di atas, kami juga mengimbau Guru dan Admin PT untuk melakukan pemadanan data dan Operator PAK untuk menggunakan perangkat bantu AK Konversi <span class="badge badge-primary">Selengkapnya</span>
                </div>
                <div class="row">
                   <div class="col-lg-4">
                      <!-- Personal-Information -->
                      <div class="card">
                         <div class="card-body">
-                           <h4 class="header-title mt-0 mb-1">Pemadanan Data Dosen</h4>
+                           <h4 class="header-title mt-0 mb-1">Pemadanan Data Guru</h4>
                            <p class="text-muted font-13">
-                              Progres pemeriksaan status dosen dan verifikasi NIK ditampilkan di sini
+                              Progres pemeriksaan status Guru dan verifikasi NIK ditampilkan di sini
                            </p>
 
                            <hr />
@@ -121,7 +121,7 @@ require '../../controller/view.php';
                            <div class="text-left">
                               <ul>
                                  <li>
-                                    <strong>Periksa Status Dosen</strong> <span class="badge badge-success">Terverifikasi</span>
+                                    <strong>Periksa Status Guru</strong> <span class="badge badge-success">Terverifikasi</span>
                                     <p>
                                        Pastikan status kepegawaian dan penempatan tugas Anda telah sesuai. Segera lakukan pemadanan data jika dibutuhkan.
                                     </p>
@@ -245,10 +245,10 @@ require '../../controller/view.php';
                                     <div class="card-body">
                                        <ul>
                                           <li>
-                                             Kepmen No. 133/M/2023 Tahun 2023: NUPTK (Nomor Unik Pendidik dan Tenaga Kependidikan) sebagai nomor identitas bagi dosen/tenaga pengajar nondosen/tenaga kependidikan berikut dengan cakupan data induk serta menjelaskan bagaimana mekanisme penerbitan NUPTK.
+                                             Kepmen No. 133/M/2023 Tahun 2023: NUPTK (Nomor Unik Pendidik dan Tenaga Kependidikan) sebagai nomor identitas bagi Guru/tenaga pengajar nonGuru/tenaga kependidikan berikut dengan cakupan data induk serta menjelaskan bagaimana mekanisme penerbitan NUPTK.
                                           </li>
                                           <li>
-                                             Tindak Lanjut Regulasi: Dosen diwajibkan melakukan pemadanan status dosen yang mencakup status kepegawaian, penempatan tugas, dan verifikasi NIK. Selama masa penyesuaian dan pemutakhiran data, NIDN/NIDK/NUP/NITK masih digunakan sebagai identitas dosen dan NUPTK akan dibuat bertahap sebagai identitas unik PTK.
+                                             Tindak Lanjut Regulasi: Guru diwajibkan melakukan pemadanan status Guru yang mencakup status kepegawaian, penempatan tugas, dan verifikasi NIK. Selama masa penyesuaian dan pemutakhiran data, NIDN/NIDK/NUP/NITK masih digunakan sebagai identitas Guru dan NUPTK akan dibuat bertahap sebagai identitas unik PTK.
                                           </li>
                                           <li>
                                              Keputusan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 133/M/2023 Tahun 2023 <span class="badge badge-danger">Download</span>
@@ -267,7 +267,7 @@ require '../../controller/view.php';
                                  </div>
                                  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#custom-accordion-one">
                                     <div class="card-body">
-                                       Selama masa transisi NIDN/NIDK/NUP/NITK Anda masih tetap berlaku. Meski demikian, setelah melakukan pemadanan status dosen dan verifikasi NIK, Anda akan mendapatkan nomor identitas baru bernama NUPTK.
+                                       Selama masa transisi NIDN/NIDK/NUP/NITK Anda masih tetap berlaku. Meski demikian, setelah melakukan pemadanan status Guru dan verifikasi NIK, Anda akan mendapatkan nomor identitas baru bernama NUPTK.
                                     </div>
                                  </div>
                               </div>
@@ -281,7 +281,7 @@ require '../../controller/view.php';
                                  </div>
                                  <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#custom-accordion-one">
                                     <div class="card-body">
-                                       Anda perlu melakukan pemadanan status dosen dan verifikasi NIK untuk melanjutkan pada proses penerbitan NUPTK.
+                                       Anda perlu melakukan pemadanan status Guru dan verifikasi NIK untuk melanjutkan pada proses penerbitan NUPTK.
                                     </div>
                                  </div>
                               </div>
@@ -360,7 +360,7 @@ require '../../controller/view.php';
                                     <label for="inputEmail3" class="col-3 col-form-label">NIDN/NIDK</label>
                                     <div class="col-9">
                                        <input type="text" readonly class="form-control-plaintext" id="example-static" value="0120059201"> <span>
-                                          Tanggal mulai menjadi dosen: 22 Jun 2016
+                                          Tanggal mulai menjadi Guru: 22 Jun 2016
                                        </span>
                                     </div>
                                  </div> <!-- end card-body-->
@@ -399,9 +399,9 @@ require '../../controller/view.php';
                      <!-- Personal-Information -->
                      <div class="card">
                         <div class="card-body">
-                           <h4 class="header-title mt-0 mb-1">Riwayat Perubahan Data Dosen</h4>
+                           <h4 class="header-title mt-0 mb-1">Riwayat Perubahan Data Guru</h4>
                            <div class="alert alert-primary bg-white text-primary" role="alert">
-                              Riwayat Perubahan Data Dosen adalah log yang mencatat semua perubahan pada informasi dosen dalam sistem. Termasuk pembaruan pribadi, kualifikasi, status pekerjaan, dsb. Berfungsi melacak aktivitas dosen, transparansi, dan jejak perubahan data. Penting untuk pemantauan dan audit administratif.
+                              Riwayat Perubahan Data Guru adalah log yang mencatat semua perubahan pada informasi Guru dalam sistem. Termasuk pembaruan pribadi, kualifikasi, status pekerjaan, dsb. Berfungsi melacak aktivitas Guru, transparansi, dan jejak perubahan data. Penting untuk pemantauan dan audit administratif.
                            </div>
                            <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                               <thead>
