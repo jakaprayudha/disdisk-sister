@@ -233,7 +233,7 @@ $path = "module/$datapath/";
          </a>
          <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-               <a href="javascript:;">Angka Kredit</a>
+               <a href="<?= $path ?>angka-kredit">Angka Kredit</a>
             </li>
          </ul>
       </li>
@@ -246,10 +246,10 @@ $path = "module/$datapath/";
          </a>
          <ul class="side-nav-second-level" aria-expanded="false">
             <li>
-               <a href="javascript:;">Kepesertaan</a>
+               <a href="<?= $path ?>kepesertaan"">Kepesertaan</a>
             </li>
             <li>
-               <a href="javascript:;">Asesmen Asesor</a>
+               <a href=" javascript:;">Asesmen Asesor</a>
             </li>
          </ul>
       </li>
