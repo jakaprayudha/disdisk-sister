@@ -5,43 +5,24 @@ $path = "module/$datapath/";
 <div class="h-100" id="left-side-menu-container" data-simplebar>
 
    <!-- LOGO -->
-   <!-- <a href="index" class="logo text-center">
+   <a class="logo text-center">
       <span class="logo-lg text-left ml-4">
-         <img src="assets/images/logoputih.png" alt="" height="35">
+         <img src="assets/images/disdik-white.png" alt="" height="35">
       </span>
       <span class="logo-sm">
          <img src="assets/images/sumut.png" alt="" height="35">
       </span>
-   </a> -->
+   </a>
 
    <!--- Sidemenu -->
    <ul class="metismenu side-nav">
-
-      <li class="side-nav-title side-nav-item">Navigation</li>
-
-      <li class="side-nav-item">
-         <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-home-alt"></i>
-            <span class="badge badge-success float-right">4</span>
-            <span> Dashboards </span>
-         </a>
-         <ul class="side-nav-second-level" aria-expanded="false">
-            <li>
-               <a href="javascript:;">Analytics</a>
-            </li>
-            <li>
-               <a href="javascript:;">Perkulihan</a>
-            </li>
-            <li>
-               <a href="javascript:;">Pembayaran Uang Kuliah</a>
-            </li>
-            <li>
-               <a href="javascript:;">P2M</a>
-            </li>
-         </ul>
-      </li>
-
       <li class="side-nav-title side-nav-item">Aktivitas</li>
+      <li class="side-nav-item">
+         <a href="<?= $path ?>" class="side-nav-link">
+            <i class="uil uil-dashboard"></i>
+            <span> Dashboard </span>
+         </a>
+      </li>
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
             <i class="uil-user"></i>
@@ -69,7 +50,7 @@ $path = "module/$datapath/";
 
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-folder"></i>
+            <i class="uil-graduation-hat"></i>
             <span> Kualifikasi </span>
             <span class="menu-arrow"></span>
          </a>
@@ -88,7 +69,7 @@ $path = "module/$datapath/";
 
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-folder"></i>
+            <i class="uil-notes"></i>
             <span> Kompetensi </span>
             <span class="menu-arrow"></span>
          </a>
@@ -103,7 +84,7 @@ $path = "module/$datapath/";
       </li>
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-folder"></i>
+            <i class="uil-presentation-plus"></i>
             <span> Pelaks. Pendidikan </span>
             <span class="menu-arrow"></span>
          </a>
@@ -136,7 +117,7 @@ $path = "module/$datapath/";
       </li>
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-folder"></i>
+            <i class="uil-flask-potion"></i>
             <span> Pelaks. Penelitian </span>
             <span class="menu-arrow"></span>
          </a>
@@ -154,7 +135,7 @@ $path = "module/$datapath/";
       </li>
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-folder"></i>
+            <i class="uil-podium"></i>
             <span> Pelaks. Pengbadian </span>
             <span class="menu-arrow"></span>
          </a>
@@ -175,7 +156,7 @@ $path = "module/$datapath/";
       </li>
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-folder"></i>
+            <i class="uil-medal"></i>
             <span> Penunjang </span>
             <span class="menu-arrow"></span>
          </a>
@@ -193,7 +174,7 @@ $path = "module/$datapath/";
       </li>
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-folder"></i>
+            <i class="uil-money-withdrawal"></i>
             <span> Reward </span>
             <span class="menu-arrow"></span>
          </a>
@@ -211,7 +192,7 @@ $path = "module/$datapath/";
       </li>
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-folder"></i>
+            <i class="uil-briefcase"></i>
             <span> Layanan BKG </span>
             <span class="menu-arrow"></span>
          </a>
@@ -227,7 +208,7 @@ $path = "module/$datapath/";
 
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-folder"></i>
+            <i class="uil-calculator-alt"></i>
             <span> Layanan PAK </span>
             <span class="menu-arrow"></span>
          </a>
@@ -240,7 +221,7 @@ $path = "module/$datapath/";
 
       <li class="side-nav-item">
          <a href="javascript: void(0);" class="side-nav-link">
-            <i class="uil-folder"></i>
+            <i class="uil-clipboard-blank"></i>
             <span> Layanan Sertifikasi </span>
             <span class="menu-arrow"></span>
          </a>
@@ -256,19 +237,19 @@ $path = "module/$datapath/";
 
       <li class="side-nav-item">
          <a href="<?= $path ?>dokumen" class="side-nav-link">
-            <i class=" uil-file-plus-alt"></i>
+            <i class=" uil-server"></i>
             <span> Data Dokumen </span>
          </a>
       </li>
       <li class="side-nav-item">
          <a href="<?= $path ?>panduan" class="side-nav-link">
-            <i class=" uil-file-plus-alt"></i>
+            <i class=" uil-file"></i>
             <span> Panduan </span>
          </a>
       </li>
       <li class="side-nav-item">
          <a href="<?= $path ?>ssd" class="side-nav-link">
-            <i class=" uil-file-plus-alt"></i>
+            <i class=" uil-envelopes"></i>
             <span> SSD </span>
          </a>
       </li>
@@ -283,7 +264,7 @@ $path = "module/$datapath/";
       </a>
       <img src="assets/images/help-icon.svg" height="90" alt="Helper Icon Image" />
       <h5 class="mt-3">Bantuan</h5>
-      <p class="mb-3">Jika ada kendala hubungi developer Disnaker</p>
+      <p class="mb-3">Jika ada kendala hubungi developer disidik</p>
       <a href="javascript: void(0);" class="btn btn-outline-light btn-sm">Call Whatsapp</a>
    </div>
    <!-- end Help Box -->
