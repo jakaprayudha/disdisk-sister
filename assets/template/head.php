@@ -1,11 +1,11 @@
 <base href="../../">
 <meta charset="utf-8" />
-<title><?= $page ?> - Universistas Graha Kirana</title>
+<title><?= $page ?> - SISDIK SUMUT</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta content="Universitas Graha Kirana" name="description" />
 <meta content="ImZack Dev" name="author" />
 <!-- App favicon -->
-<link rel="shortcut icon" href="assets/images/graha.png">
+<link rel="shortcut icon" href="assets/images/sumut.png">
 
 <!-- third party css -->
 <link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
