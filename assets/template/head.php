@@ -22,3 +22,4 @@
 <!-- Datatables css -->
 <link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
 <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

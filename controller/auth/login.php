@@ -7,6 +7,7 @@ if (isset($_POST['login'])) {
    $data_user = mysqli_fetch_array($check_user);
    session_start();
    $_SESSION['uid'] = $data_user['uid'];
+   $_SESSION['nik'] = $data_user['nik'];
    $_SESSION['fullname'] = $data_user['fullname'];
    $_SESSION['username'] = $data_user['username'];
    $_SESSION['roles'] = $data_user['roles'];
@@ -66,10 +67,13 @@ if (isset($_POST['register'])) {
          $uid = md5($nik);
          $roles = 'user';
          $path = 'user';
-         $insert = mysqli_query($koneksi, "INSERT INTO user (uid, fullname, username, password, roles, path)VALUES('$uid','$nama','$email','$password','$roles','$path')");
+         $insert = mysqli_query($koneksi, "INSERT INTO user (uid, nik, fullname, username, password, roles, path)VALUES('$uid','$nik','$nama','$email','$password','$roles','$path')");
          if ($insert) {
-            $_SESSION["sukses"] = 'Anda Berhasil Melakukan Registrasi, Silahkan Login !!';
-            $_SESSION['redirectlogin'] = 'index';
+            $sql = mysqli_query($koneksi, "INSERT INTO profile(user_id, nama)VALUES('$nik','$nama')");
+            if ($sql) {
+               $_SESSION["sukses"] = 'Anda Berhasil Melakukan Registrasi, Silahkan Login !!';
+               $_SESSION['redirectlogin'] = 'index';
+            }
          }
       }
    } else {

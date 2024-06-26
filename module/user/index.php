@@ -1,6 +1,9 @@
 <?php
 $page = "Home";
 require '../../controller/view.php';
+$nik = $_SESSION['nik'];
+$checkprofile = mysqli_query($koneksi, "SELECT * FROM profile WHERE user_id='$nik'");
+$dataprofile = mysqli_fetch_array($checkprofile);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,8 +75,8 @@ require '../../controller/view.php';
                                     <span class="float-left m-2 mr-4"><img src="assets/images/users/avatar-2.jpg" style="height: 100px;" alt="" class="rounded-circle img-thumbnail"></span>
                                     <div class="media-body">
 
-                                       <h4 class="mt-1 mb-1 text-white">Jaka Prayudha</h4>
-                                       <p class="font-13 text-white-50"> STMIK Triguna Dharma</p>
+                                       <h4 class="mt-1 mb-1 text-white"><?= $dataprofile['nama'] ?></h4>
+                                       <p class="font-13 text-white-50">STMIK Triguna Dharma</p>
 
                                        <ul class="mb-0 list-inline text-light">
                                           <li class="list-inline-item mr-3">

@@ -216,6 +216,12 @@ $path = "module/$datapath/";
             <li>
                <a href="<?= $path ?>angka-kredit">Angka Kredit</a>
             </li>
+            <li>
+               <a href="<?= $path ?>perhitungan-pak">Perhitungan PAK</a>
+            </li>
+            <li>
+               <a href="<?= $path ?>penetapan-pak">Penetapan PAK</a>
+            </li>
          </ul>
       </li>
 

@@ -1,6 +1,7 @@
 <?php
 require "../../config/connect.php";
 session_start();
+$nik = $_SESSION['nik'];
 function tampildata($query)
 {
    global $koneksi;
