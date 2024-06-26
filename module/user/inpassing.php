@@ -111,7 +111,6 @@ $query = tampildata("SELECT * FROM inpasing WHERE nik='$nik'");
                                                 </a>
                                              <?php  }
                                              ?>
-
                                           </td>
                                           <td class="text-center">
                                              <button type="button" data-toggle="modal" data-target="#upload<?= $data['id'] ?>" class="btn btn-info mb-2 mr-1"><i class="mdi mdi-folder"></i></button>
