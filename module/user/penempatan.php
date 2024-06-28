@@ -1,8 +1,9 @@
 <?php
 $page = 'Penempatan';
 require '../../controller/view.php';
+require '../../controller/profile/controllerPenempatan.php';
 $roles = 'user';
-$query = tampildata("SELECT * FROM usulan");
+$query = tampildata("SELECT * FROM penempatan WHERE nik='$nik'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +50,6 @@ $query = tampildata("SELECT * FROM usulan");
                         <div class="page-title-right">
                            <ol class="breadcrumb m-0">
                               <li class="breadcrumb-item"><a href="javascript: void(0);">Master Data</a></li>
-                              <li class="breadcrumb-item"><a href="javascript: void(0);">Akademik</a></li>
                               <li class="breadcrumb-item active"><?= $page ?></li>
                            </ol>
                         </div>
@@ -65,7 +65,7 @@ $query = tampildata("SELECT * FROM usulan");
                         <div class="card-body">
                            <div class="row mb-2">
                               <div class="col-sm-4">
-                                 <a href="module/user/penempatan-usulan" class="btn btn-primary mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Tambah</a>
+                                 <a href="" data-toggle="modal" data-target="#add" class="btn btn-primary mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Tambah</a>
                               </div>
                               <div class="col-sm-8">
                                  <div class="text-sm-right">
@@ -83,33 +83,53 @@ $query = tampildata("SELECT * FROM usulan");
                                        <th>Ikatan Kerja</th>
                                        <th>Jenjang Pendidikan</th>
                                        <th>Unit</th>
-                                       <th>Perguruan Tinggi</th>
+                                       <th>Penempatan</th>
                                        <th>Terhitung Mulai Tanggal</th>
                                        <th>Tanggal Keluar</th>
-                                       <th>Homebase Pengusan</th>
-                                       <th>Status Data</th>
+                                       <th>Status</th>
                                        <th class="text-center">Aksi</th>
                                     </tr>
                                  </thead>
                                  <tbody>
-                                    <tr>
-                                       <td>1</td>
-                                       <td>NON PNS</td>
-                                       <td>Guru Tetap</td>
-                                       <td>S1</td>
-                                       <td>Sistem Komputer</td>
-                                       <td>STMIK Triguna Dharma</td>
-                                       <td>08 Juni 2018</td>
-                                       <td>-</td>
-                                       <td>Ya</td>
-                                       <td>
-                                          <span class="badge badge-success">Terverifikasi</span>
-                                       </td>
-                                       <td class="text-center">
-                                          <button type="button" class="btn btn-info mb-2 mr-1"><i class="mdi mdi-information"></i></button>
-                                          <button type="button" class="btn btn-primary mb-2 mr-1"><i class="mdi mdi-pencil"></i></button>
-                                       </td>
-                                    </tr>
+                                    <?php $i = 1;
+                                    foreach ($query as $data) : ?>
+                                       <tr>
+                                          <td><?= $i++ ?></td>
+                                          <td><?= $data['status_pegawai'] ?></td>
+                                          <td><?= $data['ikatan'] ?></td>
+                                          <td><?= $data['pendidikan'] ?></td>
+                                          <td><?= $data['unit'] ?></td>
+                                          <td><?= $data['homebase'] ?></td>
+                                          <td><?= $data['terhitung_mulai'] ?></td>
+                                          <td><?= $data['tanggal_keluar'] ?></td>
+                                          <td>
+                                             <span class="badge badge-success">Active</span>
+                                          </td>
+                                          <td class="text-center">
+                                             <button type="button" class="btn btn-info mb-2 mr-1"><i class="mdi mdi-information"></i></button>
+                                             <button type="button" class="btn btn-danger mb-2 mr-1" data-toggle="modal" data-target="#hapus<?= $data['id'] ?>"><i class="mdi mdi-pencil"></i></button>
+                                          </td>
+                                       </tr>
+                                       <!-- Danger Alert Modal -->
+                                       <div id="hapus<?= $data['id'] ?>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                          <div class="modal-dialog modal-sm">
+                                             <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                   <form action="" method="POST">
+                                                      <input type="hidden" name="control" value="delete">
+                                                      <input type="hidden" name="id" value="<?= $data['id'] ?>">
+                                                      <div class="text-center">
+                                                         <i class="dripicons-wrong h1"></i>
+                                                         <h4 class="mt-2">Hapus Data !</h4>
+                                                         <p class="mt-3">Apakah anda yakin menghapus data ? data yang anda hapus tidak dapat dikembalikan kembali</p>
+                                                         <button type="submit" name="proses-penempatan" class="btn btn-light my-2">Ya, Hapus</button>
+                                                      </div>
+                                                   </form>
+                                                </div>
+                                             </div><!-- /.modal-content -->
+                                          </div><!-- /.modal-dialog -->
+                                       </div><!-- /.modal -->
+                                    <?php endforeach ?>
                                  </tbody>
                               </table>
                            </div>
@@ -136,24 +156,116 @@ $query = tampildata("SELECT * FROM usulan");
          <div class="modal-dialog">
             <div class="modal-content">
                <div class="modal-header">
-                  <h4 class="modal-title" id="standard-modalLabel">Form Tambah Data <?= $page ?></h4>
+                  <h4 class="modal-title" id="standard-modalLabel">Form Tambah Data</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                </div>
-               <div class="modal-body">
-                  <div class="form-group">
-                     <label for="example-email">Kode Fakultas</label>
-                     <input type="text" id="example-email" name="example-email" class="form-control">
+               <form action="" method="POST">
+                  <input type="hidden" name="control" value="add">
+                  <input type="hidden" name="nik" value="<?= $nik ?>">
+                  <div class="modal-body">
+                     <div class="row">
+                        <div class="col">
+                           <div class="form-group">
+                              <label for="status_pegawai">Status Pegawai</label>
+                              <select name="status_pegawai" id="status_pegawai" class="form-control" required>
+                                 <option value="">PILIH</option>
+                                 <?php
+                                 $getStatus = tampildata("SELECT * FROM status_pegawai");
+                                 ?>
+                                 <?php foreach ($getStatus as $dataStatus) : ?>
+                                    <option value="<?= $dataStatus['status_pegawai'] ?>"><?= $dataStatus['status_pegawai'] ?></option>
+                                 <?php endforeach ?>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="form-group">
+                              <label for="ikatan_kerja">Ikatan Kerja</label>
+                              <select name="ikatan_kerja" id="ikatan_kerja" class="form-control" required>
+                                 <option value="">PILIH</option>
+                                 <?php
+                                 $getIkatan = tampildata("SELECT * FROM ikatan_kerja");
+                                 ?>
+                                 <?php foreach ($getIkatan as $dataIkatan) : ?>
+                                    <option value="<?= $dataIkatan['ikatan_kerja'] ?>"><?= $dataIkatan['ikatan_kerja'] ?></option>
+                                 <?php endforeach ?>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col">
+                           <div class="form-group">
+                              <label for="pendidikan">Jenjang Pendidikan</label>
+                              <select name="pendidikan" id="pendidikan" class="form-control" required>
+                                 <option value="">PILIH</option>
+                                 <?php
+                                 $getPendidikan = tampildata("SELECT * FROM pendidikan");
+                                 ?>
+                                 <?php foreach ($getPendidikan as $dataPendidikan) : ?>
+                                    <option value="<?= $dataPendidikan['pendidikan'] ?>"><?= $dataPendidikan['pendidikan'] ?></option>
+                                 <?php endforeach ?>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="form-group">
+                              <label for="unit">Unit Penempatan</label>
+                              <select name="unit" id="unit" class="form-control" required>
+                                 <option value="">PILIH</option>
+                                 <?php
+                                 $getUnit = tampildata("SELECT * FROM unit");
+                                 ?>
+                                 <?php foreach ($getUnit as $dataUnit) : ?>
+                                    <option value="<?= $dataUnit['unit'] ?>"><?= $dataUnit['unit'] ?></option>
+                                 <?php endforeach ?>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label for="sekolah">Sekolah</label>
+                        <select class="form-control select2" name="sekolah" data-toggle="select2">
+                           <option>Cari Data</option>
+                           <?php
+                           $getSekolah = tampildata("SELECT * FROM sekolah");
+                           $currentCategory = null;
+                           foreach ($getSekolah as $dataSekolah) {
+                              if ($dataSekolah['kategori'] != $currentCategory) {
+                                 if ($currentCategory !== null) {
+                                    echo '</optgroup>';
+                                 }
+                                 echo '<optgroup label="' . $dataSekolah['kategori'] . '">';
+                                 $currentCategory = $dataSekolah['kategori'];
+                              }
+                              echo '<option value="' . $dataSekolah['nama'] . '">' . $dataSekolah['nama'] . '</option>';
+                           }
+                           if ($currentCategory !== null) {
+                              echo '</optgroup>';
+                           }
+                           ?>
+                        </select>
+                     </div>
+                     <div class="row">
+                        <div class="col">
+                           <div class="form-group">
+                              <label for="terhitung_mulai">Terhitung Mulai</label>
+                              <input type="date" id="terhitung_mulai" name="terhitung_mulai" class="form-control">
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="form-group">
+                              <label for="tanggal_keluar">Tanggal Keluar</label>
+                              <input type="date" id="tanggal_keluar" name="tanggal_keluar" class="form-control">
+                           </div>
+                        </div>
+                     </div>
                   </div>
-                  <div class="form-group">
-                     <label for="example-pass">Fakultas</label>
-                     <input type="text" id="example-pass" name="example-pass" class="form-control">
+                  <div class=" modal-footer">
+                     <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                     <button type="submit" name="proses-penempatan" class="btn btn-primary">Simpan</button>
                   </div>
-
-               </div>
-               <div class=" modal-footer">
-                  <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
-                  <button type="button" class="btn btn-primary">Simpan</button>
-               </div>
+               </form>
             </div><!-- /.modal-content -->
          </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
@@ -164,6 +276,12 @@ $query = tampildata("SELECT * FROM usulan");
 
 
    </div>
+   <script type="text/javascript">
+      $('.js-example-basic-single').select2({
+         placeholder: 'Cari Data',
+         dropdownParent: '#add'
+      });
+   </script>
    <!-- END wrapper -->
    <!-- /Right-bar -->
 
