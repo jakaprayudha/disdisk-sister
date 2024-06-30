@@ -1,8 +1,9 @@
 <?php
-$page = 'Riwayat Pekerjaan';
+$page = 'Inpassing';
 require '../../controller/view.php';
+require '../../controller/profile/controllerInpassing.php';
 $roles = 'user';
-$query = tampildata("SELECT * FROM usulan");
+$query = tampildata("SELECT * FROM inpasing WHERE nik='$nik'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -112,7 +113,20 @@ $query = tampildata("SELECT * FROM usulan");
             </div> <!-- container -->
 
          </div> <!-- content -->
-
+         <?php if (@$_SESSION['sukses']) { ?>
+            <script>
+               swal("Good job !", "<?php echo $_SESSION['sukses']; ?>", "success").then(function() {
+                  window.location = "<?php echo $_SESSION['redirectlogin'] ?>";
+               });
+            </script>
+         <?php unset($_SESSION['sukses']);
+         } ?>
+         <?php if (@$_SESSION['error']) { ?>
+            <script>
+               swal("Perhatian !!", "<?php echo $_SESSION['error']; ?>", "error");
+            </script>
+         <?php unset($_SESSION['error']);
+         } ?>
          <!-- Footer Start -->
          <?php
          require '../../assets/template/footer.php';
@@ -129,21 +143,34 @@ $query = tampildata("SELECT * FROM usulan");
                   <h4 class="modal-title" id="standard-modalLabel">Form Tambah Data <?= $page ?></h4>
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                </div>
-               <div class="modal-body">
-                  <div class="form-group">
-                     <label for="example-email">Kode Fakultas</label>
-                     <input type="text" id="example-email" name="example-email" class="form-control">
-                  </div>
-                  <div class="form-group">
-                     <label for="example-pass">Fakultas</label>
-                     <input type="text" id="example-pass" name="example-pass" class="form-control">
-                  </div>
+               <form action="" method="POST">
+                  <div class="modal-body">
+                     <div class="form-group">
+                        <label for="penempatan">Penempatan </label>
+                        <select name="penempatan" id="penempatan" class="form-control">
+                           <option value="Dalam Negeri">Dalam Negeri</option>
+                           <option value="Luar Negeri">Luar Negeri</option>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <label for="pekerjaan">Nama Pekerjaan</label>
+                        <input type="text" id="pekerjaan" name="pekerjaan" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <label for="mulai">Mulai</label>
+                        <input type="date" id="mulai" name="mulai" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <label for="deskripsi">Deskripsi</label>
+                        <textarea name="deskripsi" class="form-control" rows="5" id="deskripsi"></textarea>
+                     </div>
 
-               </div>
-               <div class=" modal-footer">
-                  <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
-                  <button type="button" class="btn btn-primary">Simpan</button>
-               </div>
+                  </div>
+                  <div class=" modal-footer">
+                     <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                     <button type="submit" name="proses-pekerjaan" class="btn btn-primary">Simpan</button>
+                  </div>
+               </form>
             </div><!-- /.modal-content -->
          </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->

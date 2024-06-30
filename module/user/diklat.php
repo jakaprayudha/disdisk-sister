@@ -1,8 +1,9 @@
 <?php
 $page = 'Diklat';
 require '../../controller/view.php';
+require '../../controller/kualifikasi/controllerDiklat.php';
 $roles = 'user';
-$query = tampildata("SELECT * FROM usulan");
+$getDiklat = tampildata("SELECT * FROM diklat INNER JOIN ms_diklat ON ms_diklat.id_diklat = diklat.id_diklat WHERE nik='$nik'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,8 +49,7 @@ $query = tampildata("SELECT * FROM usulan");
                      <div class="page-title-box">
                         <div class="page-title-right">
                            <ol class="breadcrumb m-0">
-                              <li class="breadcrumb-item"><a href="javascript: void(0);">Master Data</a></li>
-                              <li class="breadcrumb-item"><a href="javascript: void(0);">Akademik</a></li>
+                              <li class="breadcrumb-item"><a href="javascript: void(0);">Kualifikasi</a></li>
                               <li class="breadcrumb-item active"><?= $page ?></li>
                            </ol>
                         </div>
@@ -85,28 +85,85 @@ $query = tampildata("SELECT * FROM usulan");
                                        <th>Nama Diklat</th>
                                        <th>Jenis Diklat</th>
                                        <th>Penyelenggara</th>
-                                       <th>Tahun</th>
-                                       <th>Status</th>
+                                       <th class="text-center">Tahun</th>
+                                       <th class="text-center">Dokumen</th>
                                        <th class="text-center">Aksi</th>
                                     </tr>
                                  </thead>
                                  <tbody>
-                                    <tr>
-                                       <td>1</td>
-                                       <td>Academic Training</td>
-                                       <td>Pelatihan Profesional</td>
-                                       <td>Winner Indonesia Learning Centre</td>
-                                       <td>2020</td>
-                                       <td>
-                                          <span class="badge badge-success">Data Diinput manual</span>
-                                       </td>
-                                       <td class="text-center">
-                                          <button type="button" class="btn btn-info mb-2 mr-1"><i class="mdi mdi-information"></i></button>
-                                          <button type="button" class="btn btn-primary mb-2 mr-1"><i class="mdi mdi-pencil"></i></button>
-                                          <button type="button" class="btn btn-danger mb-2 mr-1"><i class="mdi mdi-delete"></i></button>
-                                          <button type="button" class="btn btn-success mb-2 mr-1"><i class="mdi mdi-plus"></i></button>
-                                       </td>
-                                    </tr>
+                                    <?php $i = 1;
+                                    foreach ($getDiklat as $data) : ?>
+                                       <tr>
+                                          <td><?= $i++ ?></td>
+                                          <td><?= $data['nama_diklat'] ?></td>
+                                          <td><?= $data['jenis'] ?></td>
+                                          <td><?= $data['penyelenggara'] ?></td>
+                                          <td class="text-center"><?= $data['tahun'] ?></td>
+                                          <td class="text-center">
+                                             <?php
+                                             $tipe = "Diklat";
+                                             $checkDokumen = mysqli_query($koneksi, "SELECT * FROM dokumen WHERE nik='$nik' AND keterangan='$tipe'");
+                                             $dataDokumen = mysqli_fetch_array($checkDokumen);
+                                             @$dokumen = $dataDokumen['dokumen'];
+                                             if ($dokumen == NULL) { ?>
+                                                <span class="badge badge-danger">Belum Ada File</span>
+                                             <?php    } else { ?>
+                                                <a href="file/dokumen/<?= $dokumen ?>" target="_blank">
+                                                   <span class="badge badge-primary">Lihat File</span>
+                                                </a>
+                                             <?php  }
+                                             ?>
+                                          </td>
+                                          <td class="text-center">
+                                             <button type="button" data-toggle="modal" data-target="#upload<?= $data['id'] ?>" class="btn btn-info mb-2 mr-1"><i class="mdi mdi-information"></i></button>
+                                             <button type="button" class="btn btn-primary mb-2 mr-1"><i class="mdi mdi-pencil"></i></button>
+                                             <button type="button" data-toggle="modal" data-target="#hapus<?= $data['id'] ?>" class="btn btn-danger mb-2 mr-1"><i class="mdi mdi-delete"></i></button>
+                                          </td>
+                                       </tr>
+                                       <!-- Standard modal -->
+                                       <div id="upload<?= $data['id'] ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                             <div class="modal-content">
+                                                <div class="modal-header">
+                                                   <h4 class="modal-title" id="standard-modalLabel">Form Upload Dokumen</h4>
+                                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                </div>
+                                                <form action="" method="POST" enctype="multipart/form-data">
+                                                   <input type="hidden" name="nik" value="<?= $nik ?>">
+                                                   <div class="modal-body">
+                                                      <div class="form-group">
+                                                         <label for="example-email">File Dokumen</label>
+                                                         <input type="file" name="dokumen" class="form-control" required>
+                                                      </div>
+                                                   </div>
+                                                   <div class=" modal-footer">
+                                                      <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                                                      <button type="submit" name="upload-diklat" class="btn btn-primary">Simpan</button>
+                                                   </div>
+                                                </form>
+                                             </div><!-- /.modal-content -->
+                                          </div><!-- /.modal-dialog -->
+                                       </div><!-- /.modal -->
+                                       <!-- Danger Alert Modal -->
+                                       <div id="hapus<?= $data['id'] ?>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                          <div class="modal-dialog modal-sm">
+                                             <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                   <form action="" method="POST">
+                                                      <input type="hidden" name="control" value="delete">
+                                                      <input type="hidden" name="id" value="<?= $data['id'] ?>">
+                                                      <div class="text-center">
+                                                         <i class="dripicons-wrong h1"></i>
+                                                         <h4 class="mt-2">Hapus Data !</h4>
+                                                         <p class="mt-3">Apakah anda yakin menghapus data ? data yang anda hapus tidak dapat dikembalikan kembali</p>
+                                                         <button type="submit" name="proses-diklat" class="btn btn-light my-2">Ya, Hapus</button>
+                                                      </div>
+                                                   </form>
+                                                </div>
+                                             </div><!-- /.modal-content -->
+                                          </div><!-- /.modal-dialog -->
+                                       </div><!-- /.modal -->
+                                    <?php endforeach ?>
                                  </tbody>
                               </table>
                            </div>
@@ -119,7 +176,20 @@ $query = tampildata("SELECT * FROM usulan");
             </div> <!-- container -->
 
          </div> <!-- content -->
-
+         <?php if (@$_SESSION['sukses']) { ?>
+            <script>
+               swal("Good job !", "<?php echo $_SESSION['sukses']; ?>", "success").then(function() {
+                  window.location = "<?php echo $_SESSION['redirectlogin'] ?>";
+               });
+            </script>
+         <?php unset($_SESSION['sukses']);
+         } ?>
+         <?php if (@$_SESSION['error']) { ?>
+            <script>
+               swal("Perhatian !!", "<?php echo $_SESSION['error']; ?>", "error");
+            </script>
+         <?php unset($_SESSION['error']);
+         } ?>
          <!-- Footer Start -->
          <?php
          require '../../assets/template/footer.php';
@@ -136,21 +206,40 @@ $query = tampildata("SELECT * FROM usulan");
                   <h4 class="modal-title" id="standard-modalLabel">Form Tambah Data <?= $page ?></h4>
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                </div>
-               <div class="modal-body">
-                  <div class="form-group">
-                     <label for="example-email">Kode Fakultas</label>
-                     <input type="text" id="example-email" name="example-email" class="form-control">
+               <form action="" method="POST">
+                  <input type="hidden" name="nik" value="<?= $nik ?>">
+                  <input type="hidden" name="control" value="add">
+                  <div class="modal-body">
+                     <div class="form-group">
+                        <label for="jenis">Jenis Diklat</label>
+                        <select name="jenis" class="form-control" id="jenis">
+                           <option value="">PILIH</option>
+                           <?php
+                           $getJenisdiklat = mysqli_query($koneksi, "SELECT * FROM ms_diklat ");
+                           ?>
+                           <?php foreach ($getJenisdiklat as $getDataDiklat) : ?>
+                              <option value="<?= $getDataDiklat['id_diklat'] ?>"><?= $getDataDiklat['jenis'] ?></option>
+                           <?php endforeach ?>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <label for="diklat">Nama Kegiatan</label>
+                        <input type="text" id="diklat" name="diklat" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <label for="penyelanggara">Penyelenggara</label>
+                        <input type="text" id="penyelanggara" name="penyelanggara" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <label for="tahun">Tahun</label>
+                        <input type="text" id="tahun" name="tahun" class="form-control">
+                     </div>
                   </div>
-                  <div class="form-group">
-                     <label for="example-pass">Fakultas</label>
-                     <input type="text" id="example-pass" name="example-pass" class="form-control">
+                  <div class=" modal-footer">
+                     <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                     <button type="submit" name="proses-diklat" class="btn btn-primary">Simpan</button>
                   </div>
-
-               </div>
-               <div class=" modal-footer">
-                  <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
-                  <button type="button" class="btn btn-primary">Simpan</button>
-               </div>
+               </form>
             </div><!-- /.modal-content -->
          </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
