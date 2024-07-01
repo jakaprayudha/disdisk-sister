@@ -1,8 +1,9 @@
 <?php
 $page = 'Sertifikasi';
 require '../../controller/view.php';
+require '../../controller/kompetensi/controllerSerfikasi.php';
 $roles = 'user';
-$query = tampildata("SELECT * FROM usulan");
+$getSertifikasi = tampildata("SELECT * FROM sertifikasi INNER JOIN ms_sertifikasi ON ms_sertifikasi.id_jenis = sertifikasi.id_jenis WHERE nik='$nik'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,20 +84,87 @@ $query = tampildata("SELECT * FROM usulan");
                                        <th>Bidang Studi</th>
                                        <th>Nomor Registrasi Pendidik</th>
                                        <th>Nomor SK Sertifikasi</th>
-                                       <th>Tahun Sertifikasi</th>
+                                       <th class="text-center">Tahun</th>
+                                       <th class="text-center">Dokumen</th>
                                        <th class="text-center">Aksi</th>
                                     </tr>
                                  </thead>
                                  <tbody>
-                                    <tr>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                    </tr>
+                                    <?php $i = 1;
+                                    foreach ($getSertifikasi as $data) : ?>
+                                       <tr>
+                                          <td><?= $i++ ?></td>
+                                          <td><?= $data['jenis'] ?></td>
+                                          <td><?= $data['bidang'] ?></td>
+                                          <td><?= $data['nomor_registrasi'] ?></td>
+                                          <td><?= $data['nomor_sertifikasi'] ?></td>
+                                          <td class="text-center"><?= $data['tahun'] ?></td>
+                                          <td class="text-center">
+                                             <?php
+                                             $tipe = "Sertifikasi";
+                                             $checkDokumen = mysqli_query($koneksi, "SELECT * FROM dokumen WHERE nik='$nik' AND keterangan='$tipe'");
+                                             $dataDokumen = mysqli_fetch_array($checkDokumen);
+                                             @$dokumen = $dataDokumen['dokumen'];
+                                             if ($dokumen == NULL) { ?>
+                                                <span class="badge badge-danger">Belum Ada File</span>
+                                             <?php    } else { ?>
+                                                <a href="file/dokumen/<?= $dokumen ?>" target="_blank">
+                                                   <span class="badge badge-primary">Lihat File</span>
+                                                </a>
+                                             <?php  }
+                                             ?>
+                                          </td>
+                                          <td class="text-center">
+                                             <button type="button" data-toggle="modal" data-target="#upload<?= $data['id'] ?>" class="btn btn-info mb-2 mr-1"><i class="mdi mdi-folder"></i></button>
+                                             <button type="button" data-toggle="modal" data-target="#ubah<?= $data['id'] ?>" class="btn btn-primary mb-2 mr-1"><i class="mdi mdi-pencil"></i></button>
+                                             <button type="button" data-toggle="modal" data-target="#hapus<?= $data['id'] ?>" class="btn btn-danger mb-2 mr-1"><i class="mdi mdi-delete"></i></button>
+                                          </td>
+                                       </tr>
+                                       <!-- Standard modal -->
+                                       <div id="upload<?= $data['id'] ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                             <div class="modal-content">
+                                                <div class="modal-header">
+                                                   <h4 class="modal-title" id="standard-modalLabel">Form Upload Dokumen</h4>
+                                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                </div>
+                                                <form action="" method="POST" enctype="multipart/form-data">
+                                                   <input type="hidden" name="nik" value="<?= $nik ?>">
+                                                   <div class="modal-body">
+                                                      <div class="form-group">
+                                                         <label for="example-email">File Dokumen</label>
+                                                         <input type="file" name="dokumen" class="form-control" required>
+                                                      </div>
+                                                   </div>
+                                                   <div class=" modal-footer">
+                                                      <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                                                      <button type="submit" name="upload-sertifikasi" class="btn btn-primary">Simpan</button>
+                                                   </div>
+                                                </form>
+                                             </div><!-- /.modal-content -->
+                                          </div><!-- /.modal-dialog -->
+                                       </div><!-- /.modal -->
+                                       <!-- Danger Alert Modal -->
+                                       <div id="hapus<?= $data['id'] ?>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                          <div class="modal-dialog modal-sm">
+                                             <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                   <form action="" method="POST">
+                                                      <input type="hidden" name="control" value="delete">
+                                                      <input type="hidden" name="id" value="<?= $data['id'] ?>">
+                                                      <div class="text-center">
+                                                         <i class="dripicons-wrong h1"></i>
+                                                         <h4 class="mt-2">Hapus Data !</h4>
+                                                         <p class="mt-3">Apakah anda yakin menghapus data ? data yang anda hapus tidak dapat dikembalikan kembali</p>
+                                                         <button type="submit" name="proses-sertifikasi" class="btn btn-light my-2">Ya, Hapus</button>
+                                                      </div>
+                                                   </form>
+                                                </div>
+                                             </div><!-- /.modal-content -->
+                                          </div><!-- /.modal-dialog -->
+                                       </div><!-- /.modal -->
+
+                                    <?php endforeach ?>
                                  </tbody>
                               </table>
                            </div>
@@ -109,7 +177,20 @@ $query = tampildata("SELECT * FROM usulan");
             </div> <!-- container -->
 
          </div> <!-- content -->
-
+         <?php if (@$_SESSION['sukses']) { ?>
+            <script>
+               swal("Good job !", "<?php echo $_SESSION['sukses']; ?>", "success").then(function() {
+                  window.location = "<?php echo $_SESSION['redirectlogin'] ?>";
+               });
+            </script>
+         <?php unset($_SESSION['sukses']);
+         } ?>
+         <?php if (@$_SESSION['error']) { ?>
+            <script>
+               swal("Perhatian !!", "<?php echo $_SESSION['error']; ?>", "error");
+            </script>
+         <?php unset($_SESSION['error']);
+         } ?>
          <!-- Footer Start -->
          <?php
          require '../../assets/template/footer.php';
@@ -126,21 +207,44 @@ $query = tampildata("SELECT * FROM usulan");
                   <h4 class="modal-title" id="standard-modalLabel">Form Tambah Data <?= $page ?></h4>
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                </div>
-               <div class="modal-body">
-                  <div class="form-group">
-                     <label for="example-email">Kode Fakultas</label>
-                     <input type="text" id="example-email" name="example-email" class="form-control">
+               <form action="" method="POST">
+                  <input type="hidden" name="control" value="add">
+                  <input type="hidden" name="nik" value="<?= $nik ?>">
+                  <div class="modal-body">
+                     <div class="form-group">
+                        <label for="jenis">Jenis Sertifiksi</label>
+                        <select name="jenis" id="jenis" class="form-control">
+                           <option value="">PILIH</option>
+                           <?php
+                           $getJenisSertifikasi = mysqli_query($koneksi, "SELECT * FROM ms_sertifikasi");
+                           ?>
+                           <?php foreach ($getJenisSertifikasi as $dataJenis) : ?>
+                              <option value="<?= $dataJenis['id_jenis'] ?>"><?= $dataJenis['jenis'] ?></option>
+                           <?php endforeach ?>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <label for="bidang">Bidang Studi</label>
+                        <input type="text" id="bidang" name="bidang" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <label for="no_registrasi">Nomor Registrasi Pendidik</label>
+                        <input type="text" id="no_registrasi" name="no_registrasi" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <label for="no_sertifikasi">Nomor SK Sertifikasi</label>
+                        <input type="text" id="no_sertifikasi" name="no_sertifikasi" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <label for="tahun">Tahun</label>
+                        <input type="year" id="tahun" name="tahun" class="form-control">
+                     </div>
                   </div>
-                  <div class="form-group">
-                     <label for="example-pass">Fakultas</label>
-                     <input type="text" id="example-pass" name="example-pass" class="form-control">
+                  <div class=" modal-footer">
+                     <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                     <button type="submit" name="proses-sertifikasi" class="btn btn-primary">Simpan</button>
                   </div>
-
-               </div>
-               <div class=" modal-footer">
-                  <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
-                  <button type="button" class="btn btn-primary">Simpan</button>
-               </div>
+               </form>
             </div><!-- /.modal-content -->
          </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
