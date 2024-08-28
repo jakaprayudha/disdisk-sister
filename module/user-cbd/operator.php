@@ -1,5 +1,5 @@
 <?php
-$page = 'Pembicara';
+$page = 'Operator Sekolah';
 require '../../controller/view.php';
 $roles = 'user';
 $query = tampildata("SELECT * FROM usulan");
@@ -49,7 +49,6 @@ $query = tampildata("SELECT * FROM usulan");
                         <div class="page-title-right">
                            <ol class="breadcrumb m-0">
                               <li class="breadcrumb-item"><a href="javascript: void(0);">Master Data</a></li>
-                              <li class="breadcrumb-item"><a href="javascript: void(0);">Akademik</a></li>
                               <li class="breadcrumb-item active"><?= $page ?></li>
                            </ol>
                         </div>
@@ -79,26 +78,16 @@ $query = tampildata("SELECT * FROM usulan");
                                  <thead>
                                     <tr>
                                        <th>No</th>
-                                       <th>Kategori Kegiatan</th>
-                                       <th>Judul Makalah</th>
-                                       <th>Nama Temu Ilmiah</th>
-                                       <th>Penyelenggara</th>
-                                       <th>Tanggal Pelaksanaan</th>
-                                       <th>Rubrik BKD</th>
+                                       <th>Sekolah</th>
+                                       <th>Nama Operator</th>
+                                       <th>Email</th>
+                                       <th>No.Handphone</th>
+                                       <th>Status</th>
                                        <th class="text-center">Aksi</th>
                                     </tr>
                                  </thead>
                                  <tbody>
-                                    <tr>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                    </tr>
+
                                  </tbody>
                               </table>
                            </div>

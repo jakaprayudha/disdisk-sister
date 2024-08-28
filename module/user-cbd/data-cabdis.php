@@ -50,10 +50,10 @@ require '../../controller/view.php';
                         <div class="page-title-right">
                            <ol class="breadcrumb m-0">
                               <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
-                              <li class="breadcrumb-item active">Profile Tenaga Pendidik</li>
+                              <li class="breadcrumb-item active">Profile Cabang Dinas</li>
                            </ol>
                         </div>
-                        <h4 class="page-title">Profile Tenaga Pendidik</h4>
+                        <h4 class="page-title">Profile Cabang Dinas</h4>
                      </div>
                   </div>
                </div>
@@ -125,76 +125,6 @@ require '../../controller/view.php';
                            </div>
                         </div>
                      </div>
-                     <div class="row">
-                        <div class="col-12">
-                           <div class="card">
-                              <h5 class="card-header">Keluarga <span class="badge badge-primary float-right">Ajukan Perubahan</span>
-                              </h5>
-                              <div class="card-body">
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Status Perkawinan</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Kawin">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Nama Suami/Istri</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Kiki Wulandari">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">NIP Suami/Istri</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": -">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Pekerjaan Suami/Istri</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Accounting Public">
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="row">
-                        <div class="col-12">
-                           <div class="card">
-                              <h5 class="card-header">Rumpun Ilmu
-                                 <span class="badge badge-primary float-right">Perbarui Data
-                                 </span>
-                              </h5>
-                              <div class="card-body">
-                                 <p>
-                                    Informasi ini diperlukan untuk pemetaan sumber daya & basis data berbagai layanan di SISTER
-                                 </p>
-                                 <div class="alert alert-danger" role="alert">
-                                    Segera lengkapi informasi ini untuk mengakses berbagai layanan di SISTER (BKG, PAK & lainnya)
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Rumpun Ilmu</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Ilmu Komputer">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Pohon Ilmu</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Teknologi Informasi">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Cabang Ilmu</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Sistem Komputer">
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
                   </div>
                   <div class="col-6">
                      <div class="card">
@@ -259,104 +189,6 @@ require '../../controller/view.php';
                               <label for="staticEmail" class="col-sm-4 col-form-label">No.Ponsel</label>
                               <div class="col-sm-6">
                                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 081234567890">
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="row">
-                        <div class="col-12">
-                           <div class="card">
-                              <h5 class="card-header">Kepegawaian <span class="badge badge-primary float-right">Ajukan Perubahan</span>
-                              </h5>
-                              <div class="card-body">
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Program Studi</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": S1-Ilmu komputer">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">NIP (Khusus PNS)</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": -">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Status Kepegawaian</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Guru Tetap">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Status Keaktifan</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Aktif">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Nomor SK CPNS</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": -">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">SK CPNS Terhitung Mulai Tanggal</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": -">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Nomor SK TMMD</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 109.2/SKDT/YBKS/VI/2">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Tanggal Mulai Mejadi Guru (TMMD)</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="12 Agustus 2016">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Pangkat/Golongan</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Penata - III/c ">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Sumber Gaji</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Lainnya">
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="row">
-                        <div class="col-12">
-                           <div class="card">
-                              <h5 class="card-header">Lain Lain <span class="badge badge-primary float-right">Ajukan Perubahan</span>
-                              </h5>
-                              <div class="card-body">
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">NPWP</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 907622351113000">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Nama Wajib Pajak</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": JAKA PRAYUDHA">
-                                    </div>
-                                 </div>
-                                 <div class="row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">SINTA ID</label>
-                                    <div class="col-sm-6">
-                                       <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 6087041">
-                                    </div>
-                                 </div>
                               </div>
                            </div>
                         </div>

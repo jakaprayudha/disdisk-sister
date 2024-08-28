@@ -72,10 +72,12 @@ if (isset($_POST['register'])) {
          $uid = md5($nik);
          if ($roles == 3) {
             $role = "user";
+            $path = "user";
          } else if ($roles == 2) {
             $role = 'opt-sekolah';
          } else if ($roles == 1) {
             $role = 'opt-cabdis';
+            $path = 'user-cbd';
          }
          $path = 'user';
          $insert = mysqli_query($koneksi, "INSERT INTO user (uid, nik, fullname, username, password, roles, path)VALUES('$uid','$nik','$nama','$email','$password','$role','$path')");
