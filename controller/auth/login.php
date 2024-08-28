@@ -5,16 +5,16 @@ if (isset($_POST['login'])) {
    $password = md5($_POST['password']);
    $check_user = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$email'");
    $data_user = mysqli_fetch_array($check_user);
-   session_start();
-   $_SESSION['uid'] = $data_user['uid'];
-   $_SESSION['nik'] = $data_user['nik'];
-   $_SESSION['fullname'] = $data_user['fullname'];
-   $_SESSION['username'] = $data_user['username'];
-   $_SESSION['roles'] = $data_user['roles'];
-   $_SESSION['path'] = $data_user['path'];
    if ($data_user == NULL) {
       $_SESSION["error"] = 'Username Anda Belum Terdaftar !!  ';
    } else {
+      session_start();
+      $_SESSION['uid'] = $data_user['uid'];
+      $_SESSION['nik'] = $data_user['nik'];
+      $_SESSION['fullname'] = $data_user['fullname'];
+      $_SESSION['username'] = $data_user['username'];
+      $_SESSION['roles'] = $data_user['roles'];
+      $_SESSION['path'] = $data_user['path'];
       $pass = $data_user['password'];
       if ($pass != $password) {
          $_SESSION["error"] = 'Password Anda Salah !! ';
@@ -22,8 +22,12 @@ if (isset($_POST['login'])) {
          $roles = $data_user['roles'];
          if ($roles == 'admin') {
             $_SESSION['redirectlogin'] = 'module/admin/index';
-         } else if ($roles = 'user') {
+         } else if ($roles == 'user') {
             $_SESSION['redirectlogin'] = 'module/user/index';
+         } else if ($roles == 'opt-cabdis') {
+            $_SESSION['redirectlogin'] = 'module/user-cbd/index';
+         } else if ($roles == 'opt-sekolah') {
+            $_SESSION['redirectlogin'] = 'module/user-sch/index';
          }
          $stamp = date('Y-m-d H:i:s');
          $update_status_time = mysqli_query($koneksi, "UPDATE user SET update_at='$stamp' WHERE username='$email'");
@@ -53,6 +57,7 @@ if (isset($_POST['reset'])) {
 }
 
 if (isset($_POST['register'])) {
+   $roles = $_POST['roles'];
    $nik = $_POST['nomor_nik'];
    $email = $_POST['email'];
    $nama = $_POST['nama'];
@@ -65,9 +70,15 @@ if (isset($_POST['register'])) {
          $_SESSION["error"] = 'Email anda telah terdaftar !!!';
       } else {
          $uid = md5($nik);
-         $roles = 'user';
+         if ($roles == 3) {
+            $role = "user";
+         } else if ($roles == 2) {
+            $role = 'opt-sekolah';
+         } else if ($roles == 1) {
+            $role = 'opt-cabdis';
+         }
          $path = 'user';
-         $insert = mysqli_query($koneksi, "INSERT INTO user (uid, nik, fullname, username, password, roles, path)VALUES('$uid','$nik','$nama','$email','$password','$roles','$path')");
+         $insert = mysqli_query($koneksi, "INSERT INTO user (uid, nik, fullname, username, password, roles, path)VALUES('$uid','$nik','$nama','$email','$password','$role','$path')");
          if ($insert) {
             $sql = mysqli_query($koneksi, "INSERT INTO profile(user_id, nama)VALUES('$nik','$nama')");
             if ($sql) {

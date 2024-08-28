@@ -28,11 +28,20 @@ require 'controller/auth/login.php';
                     </div> -->
 
                     <!-- title-->
-                    <h4 class="mt-0">Free Sign Up</h4>
-                    <p class="text-muted mb-4">Belum punya akun? Buat akun Anda, hanya membutuhkan waktu kurang dari satu menit </p>
+                    <h4 class="mt-0">Daftar Sekarang</h4>
+                    <p class="text-muted mb-4">Lengkapi formulir pendaftaran, untuk verifikasi account dilakukan maksimal 1x24 Jam hari kerja </p>
 
                     <!-- form -->
                     <form action="" method="POST">
+                        <div class="form-group">
+                            <label for="roles">Roles User</label>
+                            <select name="roles" class="form-control" id="roles">
+                                <option value="">PILIH</option>
+                                <option value="1">Operator Cabang Dinas</option>
+                                <option value="2">Operator Sekolah</option>
+                                <option value="">Guru</option>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="nomor_nik">NIK</label>
                             <input class="form-control" autocomplete="off" type="text" id="nomor_nik" name="nomor_nik" placeholder="Nomor Induk Kependudukan" required>
