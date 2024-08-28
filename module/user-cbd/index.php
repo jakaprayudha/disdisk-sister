@@ -1,9 +1,7 @@
 <?php
 $page = "Home";
 require '../../controller/view.php';
-$uid = $_SESSION['uid'];
-$checkprofile = mysqli_query($koneksi, "SELECT * FROM profile_operator_cabdis WHERE uid_user='$uid'");
-$dataprofile = mysqli_fetch_array($checkprofile);
+require 'getcabdis.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -162,31 +160,31 @@ $dataprofile = mysqli_fetch_array($checkprofile);
                                  <div class="form-group row mb-1">
                                     <label for="inputEmail3" class="col-3 col-form-label">Kode</label>
                                     <div class="col-9">
-                                       <input type="text" readonly class="form-control-plaintext" id="example-static" value=":">
+                                       <input type="text" readonly class="form-control-plaintext" id="example-static" value=": <?= @$datacabdis['kode'] ?>">
                                     </div>
                                  </div> <!-- end card-body-->
                                  <div class=" form-group row mb-1">
                                     <label for="inputEmail3" class="col-3 col-form-label">Kepala Cabang Dinas</label>
                                     <div class="col-9">
-                                       <input type="text" readonly class="form-control-plaintext" id="example-static" value=":">
+                                       <input type="text" readonly class="form-control-plaintext" id="example-static" value=": <?= @$datacabdis['kepala_cabdis'] ?>">
                                     </div>
                                  </div> <!-- end card-body-->
                                  <div class="form-group row mb-1">
                                     <label for="inputEmail3" class="col-3 col-form-label">Alamat</label>
                                     <div class="col-9">
-                                       <input type="text" readonly class="form-control-plaintext" id="example-static" value=":">
+                                       <input type="text" readonly class="form-control-plaintext" id="example-static" value=": <?= @$datacabdis['alamat'] ?>">
                                     </div>
                                  </div> <!-- end card-body-->
                                  <div class="form-group row mb-1">
                                     <label for="inputEmail3" class="col-3 col-form-label">No. Telepon</label>
                                     <div class="col-9">
-                                       <input type="text" readonly class="form-control-plaintext" id="example-static" value=":">
+                                       <input type="text" readonly class="form-control-plaintext" id="example-static" value=": <?= @$datacabdis['telepon'] ?>">
                                     </div>
                                  </div> <!-- end card-body-->
                                  <div class="form-group row mb-1">
                                     <label for="inputEmail3" class="col-3 col-form-label">Email</label>
                                     <div class="col-9">
-                                       <input type="text" readonly class="form-control-plaintext" id="example-static" value=":">
+                                       <input type="text" readonly class="form-control-plaintext" id="example-static" value=": <?= @$datacabdis['email'] ?>">
                                     </div>
                                  </div> <!-- end card-body-->
 
@@ -200,11 +198,14 @@ $dataprofile = mysqli_fetch_array($checkprofile);
 
                                              <div id="cardCollpase1" class="collapse pt-3 show">
                                                 <div class="map-container">
-                                                   <iframe
-                                                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.363755008809!2d144.9560541153211!3d-37.81720997975143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577a8ef1a4a6c0!2sFederation%20Square%2C%20Melbourne%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
-                                                      loading="lazy"
-                                                      allowfullscreen="">
-                                                   </iframe>
+                                                   <?php
+                                                   if ($datacabdis['peta'] == NULL) { ?>
+                                                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.030747239198!2d98.6669673748154!3d3.580410350350603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131d2c6ec05a3%3A0x9f8d1ef2ae67a6ce!2sDinas%20Pendidikan%20%7C%20Provinsi%20Sumut!5e0!3m2!1sid!2sid!4v1724830823802!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                   <?php  } else {
+                                                      $datacabdis['peta'];
+                                                   }
+                                                   ?>
+
                                                 </div>
                                              </div>
                                           </div>

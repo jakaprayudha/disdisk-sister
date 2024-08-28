@@ -15,6 +15,7 @@ if (isset($_POST['login'])) {
       $_SESSION['username'] = $data_user['username'];
       $_SESSION['roles'] = $data_user['roles'];
       $_SESSION['path'] = $data_user['path'];
+      $_SESSION['cabdis_area'] = $data_user['cabdis_area'];
       $pass = $data_user['password'];
       if ($pass != $password) {
          $_SESSION["error"] = 'Password Anda Salah !! ';

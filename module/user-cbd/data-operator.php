@@ -144,25 +144,19 @@ require '../../controller/view.php';
                               </div>
                            </div>
                            <div class="row">
-                              <label for="staticEmail" class="col-sm-4 col-form-label">RT</label>
-                              <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 01">
-                              </div>
-                           </div>
-                           <div class="row">
-                              <label for="staticEmail" class="col-sm-4 col-form-label">RW</label>
-                              <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 01">
-                              </div>
-                           </div>
-                           <div class="row">
                               <label for="staticEmail" class="col-sm-4 col-form-label">Desa/Kelurahan</label>
                               <div class="col-sm-6">
                                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Jati">
                               </div>
                            </div>
                            <div class="row">
-                              <label for="staticEmail" class="col-sm-4 col-form-label">Kecamatan/Kota/Kabupaten</label>
+                              <label for="staticEmail" class="col-sm-4 col-form-label">Kecamatan</label>
+                              <div class="col-sm-6">
+                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Medan Timur">
+                              </div>
+                           </div>
+                           <div class="row">
+                              <label for="staticEmail" class="col-sm-4 col-form-label">Kabupaten</label>
                               <div class="col-sm-6">
                                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": Medan Timur">
                               </div>
@@ -180,13 +174,7 @@ require '../../controller/view.php';
                               </div>
                            </div>
                            <div class="row">
-                              <label for="staticEmail" class="col-sm-4 col-form-label">No. Telepon Rumah</label>
-                              <div class="col-sm-6">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 061-09282323">
-                              </div>
-                           </div>
-                           <div class="row">
-                              <label for="staticEmail" class="col-sm-4 col-form-label">No.Ponsel</label>
+                              <label for="staticEmail" class="col-sm-4 col-form-label">No.Handphone</label>
                               <div class="col-sm-6">
                                  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value=": 081234567890">
                               </div>
